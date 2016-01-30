@@ -31,7 +31,7 @@ public class Main {
         //String password = request.queryParams("password");
 
         if (request.queryParams("password") != "admin") {
-            response.status(401);
+            //response.status(401);
             return "Failed login!";
         }
     });
