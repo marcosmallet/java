@@ -36,6 +36,18 @@ public class Main {
     });*/
 
     post("/login", (request, response) -> {
+      if (request.queryParams("email") == null)
+      {
+        response.status(401);
+        return "Email nao informado!";  
+      }
+
+      if (request.queryParams("password") == null)
+      {
+        response.status(401);
+        return "Password nao informado!";  
+      }
+
       String email = request.queryParams("email");
       String password = request.queryParams("password");
       if (email.equals("admin@tecvidya.com.br") && password.equals("admin")) {
