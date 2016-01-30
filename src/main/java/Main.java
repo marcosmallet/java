@@ -16,10 +16,10 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 public class Main {
 
   public static void main(String[] args) {
-    /*
+    
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
-
+    /*
     get("/login", (req, res) -> "OK");
 
     get("/login/:username", (request, response) -> {
