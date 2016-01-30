@@ -40,9 +40,10 @@ public class Main {
       String password = request.queryParams("password");
       if (password != "admin") {
           response.status(401);
-          return "Failed login!";
+          return "Failed login: " + password;
       }
-      return "Hello: " + request.queryParams("email");
+      else
+        return "Hello: " + request.queryParams("email");
     });
 
 /*
