@@ -27,7 +27,7 @@ public class Main {
     });
 
     post("/login", (request, response) -> {
-        return "Hello: " + request.params("username");
+        return "Hello: " + request.params();
     });
 /*
     get("/", (request, response) -> {
