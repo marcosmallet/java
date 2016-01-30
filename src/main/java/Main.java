@@ -13,18 +13,16 @@ import static spark.Spark.get;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-
-public class Main extends HttpServlet {
+public class Main {
 
   public static void main(String[] args) {
 
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/login", (req, res) -> "OK");
+    get("/login?email=admin@tecvidya.com&password=admin", (req, res) -> "OK");
+
+    get("/", (req, res) -> "ERROR");
  
 /*
     get("/", (request, response) -> {
@@ -60,14 +58,6 @@ public class Main extends HttpServlet {
       }
     }, new FreeMarkerEngine());
 */
-  }
-
-  public void doPost(HttpServletRequest request,
-                    HttpServletResponse response)
-      throws ServletException, IOException {
-
-    String userName = request.getParameter("username");
-    String password = request.getParameter("password");
   }
 
 }
