@@ -27,7 +27,7 @@ public class Main {
     });
 
     post("/login", (request, response) -> {
-        return "Hello: " + request.queryParams();
+        return "Hello: " + request.queryParams("email");
     });
 /*
     get("/", (request, response) -> {
