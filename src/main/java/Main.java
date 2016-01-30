@@ -20,8 +20,8 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/hello", (req, res) -> "Hello World");
-
+    get("/login", (req, res) -> "OK");
+/*
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("message", "Hello World!");
@@ -54,14 +54,7 @@ public class Main {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
     }, new FreeMarkerEngine());
-
-  }
-
-  @POSTgit credentials linux
-  @Path("/login")
-  @Consumes(MediaType.APPLICATION_JSON)
-  public Response boolean(InputStream incomingData) {
-    return true;
+*/
   }
 
 }
