@@ -27,7 +27,12 @@ public class Main {
     });
 
     post("/login", (request, response) -> {
-        return "Hello: " + request.queryParams("email");
+        String email = request.queryParams("email");
+        String password = request.queryParams("password");
+
+        if (!(password != null && password.equals("admin"))) {
+                halt(401, "You are not welcome here!!!");
+            }
     });
 /*
     get("/", (request, response) -> {
