@@ -38,12 +38,15 @@ public class Main {
     post("/login", (request, response) -> {
       String email = request.queryParams("email");
       String password = request.queryParams("password");
-      if (password != "admin") {
-          response.status(401);
-          return "Failed login: " + password;
+      if (password == "admin") {
+          response.status(200);
+          return "Hello: " + request.queryParams("email");
       }
       else
-        return "Hello: " + request.queryParams("email");
+      {
+        response.status(401);
+        return "Failed login: " + password;
+      }
     });
 
 /*
