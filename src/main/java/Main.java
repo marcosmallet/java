@@ -36,6 +36,7 @@ public class Main {
     });*/
 
     post("/login", (request, response) -> {
+      String email = request.queryParams("email");
       return "Hello: " + request.queryParams("email");
     });
 
