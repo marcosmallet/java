@@ -30,10 +30,10 @@ public class Main {
         String email = request.queryParams("email");
         String password = request.queryParams("password");
 
-        if (!(password != null && password.equals("admin"))) {
-                response.status(401);
-                return "Failed login!";
-            }
+        if (password != "admin") {
+            response.status(401);
+            return "Failed login!";
+        }
     });
 /*
     get("/", (request, response) -> {
