@@ -57,4 +57,11 @@ public class Main {
 
   }
 
+  @POSTgit credentials linux
+  @Path("/login")
+  @Consumes(MediaType.APPLICATION_JSON)
+  public Response boolean(InputStream incomingData) {
+    return true;
+  }
+
 }
