@@ -22,7 +22,9 @@ public class Main {
 
     get("/login", (req, res) -> "OK");
 
-    get("/", (request, response) -> request.getParameter("username")); 
+    get("/login/:username", (request, response) -> {
+        return "Hello: " + request.params(":username");
+    });
 /*
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
