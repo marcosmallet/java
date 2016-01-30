@@ -20,10 +20,9 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/login?email=admin@tecvidya.com&password=admin", (req, res) -> "OK");
+    get("/login", (req, res) -> "OK");
 
-    get("/", (req, res) -> "ERROR");
- 
+    get("/", (request, response) -> request.getParameter("username")); 
 /*
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
