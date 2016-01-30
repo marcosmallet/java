@@ -25,6 +25,16 @@ public class Main {
     staticFileLocation("/public");
 
     get("/login", (req, res) -> "OK");
+
+    public class MyServlet extends HttpServlet {
+      public void doPost(HttpServletRequest request,
+                        HttpServletResponse response)
+          throws ServletException, IOException {
+
+        String userName = request.getParameter("username");
+        String password = request.getParameter("password");
+      }
+    } 
 /*
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
@@ -60,15 +70,5 @@ public class Main {
     }, new FreeMarkerEngine());
 */
   }
-
-  public class MyServlet extends HttpServlet {
-    public void doPost(HttpServletRequest request,
-                      HttpServletResponse response)
-        throws ServletException, IOException {
-
-      String userName = request.getParameter("username");
-      String password = request.getParameter("password");
-    }
-  }   
 
 }
