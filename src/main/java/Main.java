@@ -25,6 +25,10 @@ public class Main {
     get("/login/:username", (request, response) -> {
         return "Hello: " + request.params(":username");
     });
+
+    post("/login", (request, response) -> {
+        return "Hello: " + request.params(":username");
+    });
 /*
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
