@@ -16,7 +16,7 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 public class Main {
 
   public static void main(String[] args) {
-
+    /*
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
@@ -25,7 +25,7 @@ public class Main {
     get("/login/:username", (request, response) -> {
         return "Hello: " + request.params(":username");
     });
-    /*
+    
     post("/login", (request, response) -> {
         String email = request.queryParams("email");
         String password = request.queryParams("password");
@@ -38,16 +38,18 @@ public class Main {
     post("/login", (request, response) -> {
       String email = request.queryParams("email");
       String password = request.queryParams("password");
-      if (password.equals("admin")) {
+      if (email.equals("admin@tecvidya.com.br") && password.equals("admin")) {
           response.status(200);
           return "Hello: " + request.queryParams("email");
       }
       else
       {
         response.status(401);
-        return "Failed login: " + password;
+        return "Failed login!";
       }
     });
+
+    response.status(401);
 
 /*
     get("/", (request, response) -> {
