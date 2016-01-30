@@ -13,6 +13,10 @@ import static spark.Spark.get;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
 public class Main {
 
   public static void main(String[] args) {
@@ -20,7 +24,7 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/login", (req, res) -> args[0]);
+    get("/login", (req, res) -> "OK");
 /*
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
@@ -56,5 +60,15 @@ public class Main {
     }, new FreeMarkerEngine());
 */
   }
+
+  public class MyServlet extends HttpServlet {
+    public void doPost(HttpServletRequest request,
+                      HttpServletResponse response)
+        throws ServletException, IOException {
+
+      String userName = request.getParameter("username");
+      String password = request.getParameter("password");
+    }
+  }   
 
 }
