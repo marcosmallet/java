@@ -31,7 +31,8 @@ public class Main {
         String password = request.queryParams("password");
 
         if (!(password != null && password.equals("admin"))) {
-                halt(401, "You are not welcome here!!!");
+                response.status(401);
+                return "Failed login!";
             }
     });
 /*
