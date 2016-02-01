@@ -20,8 +20,9 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
     
-    post("/", (request, response) -> {
-      response.redirect("/login.html");   
+    get("/", (request, response) -> {
+      response.redirect("/login.html");
+      return "Please Login";    
     });
 
     post("/login", (request, response) -> {
