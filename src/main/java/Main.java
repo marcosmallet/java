@@ -21,7 +21,7 @@ public class Main {
     staticFileLocation("/public");
     
     get("/", (request, response) -> {
-      response.redirect("/login.html");
+      response.redirect("https://tecvidya-java.herokuapp.com/login.html");
       return "Please Login";    
     });
 
