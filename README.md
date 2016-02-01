@@ -1,38 +1,25 @@
-# java-getting-started
+Teste
 
-A barebones Java app, which can easily be deployed to Heroku.  
+O teste consiste na criação de 2 serviços rest através do Heroku:
+Fique livre em definir como serão feitas as requisições e as respostas de cada serviço. 
 
-This application support the [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java) article - check it out.
+O primeiro será uma listagem de usuários que deverá ser feito na linguagem PHP. Os atributos desta listagem:
 
-## Running Locally
+    user_id
+    user_name
+    user_photo
+    isFollowing
+    ranking
 
-Make sure you have Java and Maven installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
-```sh
-$ git clone https://github.com/heroku/java-getting-started.git
-$ cd java-getting-started
-$ mvn install
-$ foreman start web
-```
+O segundo serviço será feito em java e consiste na criação de um  serviço de login. O usuário informará as seguintes informações:
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+    email
+    password
 
-If you're going to use a database, ensure you have a local `.env` file that reads something like this:
 
-```
-DATABASE_URL=postgres://localhost:5432/java_database_name
-```
+O serviço deverá retornar se a autenticação foi ou não bem sucedida.
 
-## Deploying to Heroku
 
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
 
-## Documentation
-
-For more information about using Java on Heroku, see these Dev Center articles:
-
-- [Java on Heroku](https://devcenter.heroku.com/categories/java)
+No final o código deverá ser enviado e publico no servidor os 2 serviços, informando como testá-los.

@@ -19,21 +19,10 @@ public class Main {
     
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
-    /*
-    get("/login", (req, res) -> "OK");
-
-    get("/login/:username", (request, response) -> {
-        return "Hello: " + request.params(":username");
-    });
     
-    post("/login", (request, response) -> {
-        String email = request.queryParams("email");
-        String password = request.queryParams("password");
-        if (request.queryParams("password") != "admin") {
-            response.status(401);
-            return "Failed login!";
-        }
-    });*/
+    post("/", (request, response) -> {
+      response.redirect("/login.html");   
+    });
 
     post("/login", (request, response) -> {
       if (request.queryParams("email") == null)
@@ -60,43 +49,6 @@ public class Main {
         return "Failed login!";
       }
     });
-
-    //response.status(401);
-
-/*
-    get("/", (request, response) -> {
-            Map<String, Object> attributes = new HashMap<>();
-            attributes.put("message", "Hello World!");
-
-            return new ModelAndView(attributes, "index.ftl");
-        }, new FreeMarkerEngine());
-
-    get("/db", (req, res) -> {
-      Connection connection = null;
-      Map<String, Object> attributes = new HashMap<>();
-      try {
-        connection = DatabaseUrl.extract().getConnection();
-
-        Statement stmt = connection.createStatement();
-        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-
-        ArrayList<String> output = new ArrayList<String>();
-        while (rs.next()) {
-          output.add( "Read from DB: " + rs.getTimestamp("tick"));
-        }
-
-        attributes.put("results", output);
-        return new ModelAndView(attributes, "db.ftl");
-      } catch (Exception e) {
-        attributes.put("message", "There was an error: " + e);
-        return new ModelAndView(attributes, "error.ftl");
-      } finally {
-        if (connection != null) try{connection.close();} catch(SQLException e){}
-      }
-    }, new FreeMarkerEngine());
-*/
   }
 
 }
