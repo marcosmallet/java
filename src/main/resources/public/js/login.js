@@ -12,7 +12,7 @@ $(document).ready(function(){
                 $('#successlog').show();
             },
             error: function(result) {
-                $('#errolog').show();
+                $('#errorlog').show();
             }
 		})
 		return false;
