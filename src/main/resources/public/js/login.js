@@ -8,10 +8,12 @@ $(document).ready(function(){
 			url:"https://tecvidya-java.herokuapp.com/login", //REST Java
 			type:"post",				//Método de envio
 			data: "email="+email+"&password="+password,	//Dados
-   			success: function (result){ //Sucesso no AJAX					
+   			success: function (result){ //Sucesso no AJAX
+   				$('#errorlog').hide();					
                 $('#successlog').show();
             },
             error: function(result) {
+            	$('#successlog').hide();
                 $('#errorlog').show();
             }
 		})
